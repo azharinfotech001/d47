@@ -1,0 +1,24 @@
+# Understanding Concepts
+1)  Ansible -->Configuration Management Tool-->On server it manages.
+    Ex: Http, installation, Databases Configuration etc.
+2)  Cloud Vendors--> AWS(it will create services). But this is not the purpose of Ansible.
+    Why not?
+3)  Problems of Shell Scripting.
+      a) Imperative Vs Declarative.
+      Imperative:
+      #!/usr/bin/env bash
+      #useradd with UID=1100 GID=devops
+      id sample &>/dev/null
+      if [ $? -ne 0]; then
+        useradd sample
+      fi
+      USER_ID=$(id -u sample)
+        if[USER_ID -ne 1100]; then
+      Declarative:
+        - user:
+            name: sample
+            uid: 1100
+            groups: devops
+      b) Cross Platform support.
+      c) Sequential.
+      d) No remote support.
